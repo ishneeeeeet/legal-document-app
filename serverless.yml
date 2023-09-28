@@ -1,0 +1,50 @@
+service: mortgage-docs-api
+provider:
+  apiGateway:
+    binaryMediaTypes:
+      - 'multipart/form-data'
+      - 'application/json'
+  name: aws	
+  iam:
+    role:
+      statements:
+        # Allow functions to list all buckets
+        - Effect: Allow
+          Action: 'dynamodb:*'
+          Resource: '*'
+        - Effect: Allow
+          Action: 's3:*'
+          Resource: '*'
+        - Effect: Allow
+          Action: 'textract:StartDocumentAnalysis'
+          Resource: '*'
+        - Effect: Allow
+          Action: 'textract:GetDocumentAnalysis'
+          Resource: '*'
+        - Effect: Allow
+          Action: 'lambda:InvokeFunction'
+          Resource: '*'
+        - Effect: Allow
+          Action: 'lambda:InvokeAsync'
+          Resource: '*'
+  runtime: nodejs18.x
+  stage: dev
+  region: us-east-1
+  memorySize: 1024
+  timeout: 30
+functions:
+  app:
+    handler: app/app.handler
+    timeout: 600
+    events:
+      - http:
+          path: /
+          method: ANY
+          cors: true
+      - http:
+          path: /{proxy+}
+          method: ANY
+          cors: true
+  docProcessor:
+    handler: docProcessor/app.handler
+    timeout: 600

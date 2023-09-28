@@ -1,0 +1,95 @@
+{
+    "title": {
+        "queries": [
+            {
+                "Text": "What are owner(s) name mentioned under owners?",
+                "Pages": [
+                    "*"
+                ],
+                "Alias": "owners"
+            },
+            {
+                "Text": "What is plan as per legal description and short legal?",
+                "Pages": [
+                    "*"
+                ],
+                "Alias": "legalPlan"
+            },
+            {
+                "Text": "What is block as per legal description and short legal?",
+                "Pages": [
+                    "*"
+                ],
+                "Alias": "legalBlock"
+            },
+            {
+                "Text": "What is lot as per legal description and short legal?",
+                "Pages": [
+                    "*"
+                ],
+                "Alias": "legalLot"
+            }
+        ]
+    },
+    "tax": {
+        "queries": [
+            {
+                "Text": "What is parcel/property complete address?",
+                "Pages": [
+                    "*"
+                ],
+                "Alias": "propertyAddress"
+            }
+        ]
+    },
+    "contract": {
+        "queries": [
+            {
+                "Text": "What are buyer names?",
+                "Pages": [
+                    "*"
+                ],
+                "Alias": "buyerNames"
+            },
+            {
+                "Text": "What is contract closing/completion date?",
+                "Pages": [
+                    "*"
+                ],
+                "Alias": "closingDate"
+            },
+            {
+                "Text": "What is purchase price?",
+                "Pages": [
+                    "*"
+                ],
+                "Alias": "purchasePrice"
+            },
+            {
+                "Text": "What is lawyer name to whom it is referred?",
+                "Pages": [
+                    "*"
+                ],
+                "Alias": "lawyerName"
+            }
+        ]
+    },
+    "mortgage": {
+        "queries": [
+            {
+                "Text": "What is bank name?",
+                "Pages": [
+                    "*"
+                ],
+                "Alias": "bankName"
+            },
+            {
+                "Text": "What is bank address?",
+                "Pages": [
+                    "*"
+                ],
+                "Alias": "bankAddress"
+            }
+        ]
+    }
+}
